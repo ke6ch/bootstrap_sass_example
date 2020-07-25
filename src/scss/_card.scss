@@ -1,0 +1,7 @@
+.card-img-top {
+  height: 40vh;
+
+  @include media-breakpoint-up(md) {
+    height: auto;
+  }
+}

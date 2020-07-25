@@ -1,0 +1,36 @@
+// _slick.scss
+// Override slick
+
+@import "node_modules/slick-carousel/slick/slick.scss";
+@import "node_modules/slick-carousel/slick/slick-theme.scss";
+
+.slider--hero-image {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.slider--multi-image {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+
+  & img {
+    width: 100%;
+    height: 30vh;
+    object-fit: cover;
+    padding: 0 0.25rem;
+  }
+}
+
+.slick-prev {
+  @extend .slick-prev;
+  left: 15px;
+  z-index: 100;
+}
+
+.slick-next {
+  @extend .slick-next;
+  right: 15px;
+  z-index: 99;
+}
