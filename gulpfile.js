@@ -12,17 +12,19 @@ const webpackStream = require('webpack-stream');
 
 const webpackConfig = require("./webpack.config");
 
-gulp.task('browser-sync', function() {
+gulp.task('browser-sync', function(done) {
   browserSync.init({
     server: {
       baseDir: './dist/',
       index: 'index.html'
     }
   });
+  done();
+});
 
-  gulp.watch('./src/scss/**/*scss', gulp.series('sass'));
-  gulp.watch('./src/js/**/*js', gulp.series('bundle'));
-  gulp.watch(['./dist/*.html', './dist/css/**/*.css', './dist/js/**/*.js']).on('change', browserSync.reload);
+gulp.task('reload', function(done) {
+  browserSync.reload();
+  done();
 });
 
 gulp.task('sass', function() {
@@ -48,4 +50,13 @@ gulp.task('bundle', function() {
     .pipe(gulp.dest('./dist/js/'));
 });
 
-gulp.task('default', gulp.series('sass', 'bundle', 'browser-sync'));
+gulp.task('watch', function(done) {
+  gulp.watch('./src/scss/**/*scss', gulp.task('sass'));
+  gulp.watch('./src/js/**/*js', gulp.task('bundle'));
+  gulp.watch(['./dist/*.html', './dist/css/*.css', './dist/js/*.js'], gulp.task('reload'));
+  done();
+});
+
+gulp.task('default', gulp.series('sass', 'bundle', 'browser-sync', 'watch', function(done) {
+  done();
+}));
