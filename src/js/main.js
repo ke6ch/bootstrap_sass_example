@@ -14,3 +14,7 @@ $('.slider--multi-image').slick({
   infinite: true,
   slidesToShow: 3,
 });
+
+$('.button').on('click', function() {
+  $(this).toggleClass('active');
+})

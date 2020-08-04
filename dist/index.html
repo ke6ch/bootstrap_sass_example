@@ -9,13 +9,13 @@
 
 <body>
   <header>
-    <div class="navbar navbar-dark bg-dark">
+    <nav class="navbar navbar-dark bg-dark">
       <div class="container d-flex justify-between">
         <div class="navbar-brand d-flex align-items-center">
           <strong>brand</strong>
         </div>
       </div>
-      </nav>
+    </nav>
   </header>
   <main role="main">
     <div class="container-fluid">
@@ -27,6 +27,11 @@
       </div>
     </div>
     <div class="container">
+      <div class="flex-container mb-4">
+        <button class="button" type="button">アイテム１<br />Item1</button>
+        <button class="button" type="button">アイテム２<br />Item2</button>
+        <button class="button" type="button">アイテム３<br />Item3</button>
+      </div>
       <div class="row mb-4">
         <div class="col-md-4 mb-2">
           <div class="card h-100">
@@ -134,8 +139,14 @@
           <img class="img-fluid" src="img/icon-004.jpg" alt="" />
         </div>
       </div>
-      <div class="row mb-5"></div>
-      <div class="row mb-5"></div>
+      <div class="row mb-4">
+        <div class="col-md-6">
+          <img class="img-fluid" src="img/bag-001.jpg" alt="" />
+        </div>
+        <div class="col-md-6">
+          <img class="img-fluid" src="img/bag-002.jpg" alt="" />
+        </div>
+      </div>
       <div class="row">
         <div class="col">
           <div class="slider--multi-image mb-4">
@@ -149,6 +160,11 @@
       </div>
     </div>
   </main>
+  <footer class="footer">
+    <div class="container">
+      <span class="text-muted">Place sticky footer content here.</span>
+    </div>
+  </footer>
   <script src="js/bundle.js"></script>
 </body>
 
